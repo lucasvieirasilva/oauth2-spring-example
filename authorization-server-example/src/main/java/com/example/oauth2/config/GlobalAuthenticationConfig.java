@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.oauth2.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -9,6 +9,9 @@ public class GlobalAuthenticationConfig extends GlobalAuthenticationConfigurerAd
 
 	@Override
 	public void init(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("john").password("123").roles("USER");
+		auth.inMemoryAuthentication()
+			.withUser("john")
+				.password("123")
+				.roles("USER");
 	}
 }

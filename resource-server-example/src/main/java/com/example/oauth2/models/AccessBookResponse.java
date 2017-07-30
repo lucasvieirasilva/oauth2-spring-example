@@ -3,15 +3,15 @@ package com.example.oauth2.models;
 import java.util.Date;
 
 public class AccessBookResponse {
-	private int bookId;
+	private BookResponse book;
 	private CustomerResponse customer;
 	private Date accessDate;
 	
-	public int getBookId() {
-		return bookId;
+	public BookResponse getBook() {
+		return book;
 	}
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
+	public void setBook(BookResponse book) {
+		this.book = book;
 	}
 	public CustomerResponse getCustomer() {
 		return customer;

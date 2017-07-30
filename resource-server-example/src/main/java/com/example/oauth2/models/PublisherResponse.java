@@ -2,9 +2,7 @@ package com.example.oauth2.models;
 
 public class PublisherResponse {
 	private int id;
-	private String title;
-	private String author;
-	private String publisher;
+	private String name;
 	
 	public int getId() {
 		return id;
@@ -12,22 +10,10 @@ public class PublisherResponse {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public String getPublisher() {
-		return publisher;
-	}
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+	public void setName(String name) {
+		this.name = name;
 	}
 }

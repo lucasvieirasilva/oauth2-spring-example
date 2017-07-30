@@ -9,50 +9,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.oauth2.models.SaleBookResponse;
-import com.example.oauth2.services.AccessBookService;
-import com.example.oauth2.models.AccessBookResponse;
-import com.example.oauth2.models.FeedbackBookResponse;
+import com.example.oauth2.services.BookService;
 
 @RestController
-@RequestMapping("/api/book/access/")
+@RequestMapping("/api/book/sales/")
 public class SalesBookController {
 	
 	@Autowired
-	private AccessBookService accessBookService;
-	
-	@PreAuthorize("#oauth2.hasScope('read')")
-	@RequestMapping(method = RequestMethod.GET, value = "/bybook/{id}")
-	public List<AccessBookResponse> getAccessBook(@PathVariable("id") int bookId) {
-		return accessBookService.getAccessByBook(bookId);
-	}	
-	
-	@PreAuthorize("#oauth2.hasScope('read')")
-	@RequestMapping(method = RequestMethod.GET, value = "/bypublisher/{id}")
-	public List<AccessBookResponse> getAccessBookByPublisher(@PathVariable("id") int publisherId) {
-		return accessBookService.getAccessByPublisher(publisherId);
-	}
+	private BookService bookService;
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.GET, value = "/sales/bybook/{id}")
 	public List<SaleBookResponse> getSalesBook(@PathVariable("id") int bookId) {
-		return null;
+		return bookService.getSalesByBook(bookId);
 	}
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.GET, value = "/sales/bypublisher/{id}")
 	public List<SaleBookResponse> getSalesBookByPublisher(@PathVariable("id") int publisherId) {
-		return null;
-	}
-	
-	@PreAuthorize("#oauth2.hasScope('read')")
-	@RequestMapping(method = RequestMethod.GET, value = "/feedbacks/bybook/{id}")
-	public List<FeedbackBookResponse> getFeedbacksBook(@PathVariable("id") int bookId) {
-		return null;
-	}
-	
-	@PreAuthorize("#oauth2.hasScope('read')")
-	@RequestMapping(method = RequestMethod.GET, value = "/feedbacks/bypublisher/{id}")
-	public List<FeedbackBookResponse> getFeedbacksBookByPublisher(@PathVariable("id") int publisherId) {
-		return null;
+		return bookService.getSalesByPublisher(publisherId);
 	}
 }

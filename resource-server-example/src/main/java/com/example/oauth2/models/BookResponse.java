@@ -1,10 +1,13 @@
 package com.example.oauth2.models;
 
+import java.util.Date;
+
 public class BookResponse {
 	private int id;
 	private String title;
 	private String author;
-	private String publisher;
+	private Date publicationDate;
+	private PublisherResponse publisher;
 	
 	public int getId() {
 		return id;
@@ -24,10 +27,16 @@ public class BookResponse {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public String getPublisher() {
+	public PublisherResponse getPublisher() {
 		return publisher;
 	}
-	public void setPublisher(String publisher) {
+	public void setPublisher(PublisherResponse publisher) {
 		this.publisher = publisher;
+	}
+	public Date getPublicationDate() {
+		return publicationDate;
+	}
+	public void setPublicationDate(Date publicationDate) {
+		this.publicationDate = publicationDate;
 	}
 }

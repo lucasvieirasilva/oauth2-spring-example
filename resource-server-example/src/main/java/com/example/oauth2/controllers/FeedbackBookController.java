@@ -12,20 +12,20 @@ import com.example.oauth2.services.BookService;
 import com.example.oauth2.models.FeedbackBookResponse;
 
 @RestController
-@RequestMapping("/api/book/sales/")
+@RequestMapping("/api/book/feedback/")
 public class FeedbackBookController {
 	
 	@Autowired
 	private BookService bookService;
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
-	@RequestMapping(method = RequestMethod.GET, value = "/feedbacks/bybook/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/bybook/{id}")
 	public List<FeedbackBookResponse> getFeedbacksBook(@PathVariable("id") int bookId) {
 		return bookService.getFeedbackByBook(bookId);
 	}
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
-	@RequestMapping(method = RequestMethod.GET, value = "/feedbacks/bypublisher/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/bypublisher/{id}")
 	public List<FeedbackBookResponse> getFeedbacksBookByPublisher(@PathVariable("id") int publisherId) {
 		return bookService.getFeedbackByPublisher(publisherId);
 	}

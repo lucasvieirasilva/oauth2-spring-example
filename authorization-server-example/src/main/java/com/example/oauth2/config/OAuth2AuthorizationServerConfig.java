@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.oauth2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -55,10 +55,18 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("implicit-client").authorizedGrantTypes("implicit").scopes("read").and()
-				.withClient("read-client").secret("secret")
+		clients
+			.inMemory()
+				.withClient("implicit-client")
+				.authorizedGrantTypes("implicit")
+				.scopes("read")
+			.and()
+				.withClient("read-client")
+				.secret("secret")
 				.authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
-				.scopes("read").and().withClient("write-client").secret("secret")
+				.scopes("read")
+			.and()
+				.withClient("write-client").secret("secret")
 				.authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
 				.scopes("read", "write");
 	}
