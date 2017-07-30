@@ -20,13 +20,13 @@ public class FeedbackBookController {
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.GET, value = "/bybook/{id}")
-	public List<FeedbackBookResponse> getFeedbacksBook(@PathVariable("id") int bookId) {
+	public List<FeedbackBookResponse> getByBook(@PathVariable("id") int bookId) {
 		return bookService.getFeedbackByBook(bookId);
 	}
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.GET, value = "/bypublisher/{id}")
-	public List<FeedbackBookResponse> getFeedbacksBookByPublisher(@PathVariable("id") int publisherId) {
+	public List<FeedbackBookResponse> getByPublisher(@PathVariable("id") int publisherId) {
 		return bookService.getFeedbackByPublisher(publisherId);
 	}
 }

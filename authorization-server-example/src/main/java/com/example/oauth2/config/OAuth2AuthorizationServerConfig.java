@@ -23,7 +23,7 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
-
+	
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		endpoints.tokenStore(tokenStore()).accessTokenConverter(accessTokenConverter())

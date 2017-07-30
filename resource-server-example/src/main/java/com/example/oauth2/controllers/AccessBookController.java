@@ -20,13 +20,13 @@ public class AccessBookController {
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.GET, value = "/bybook/{id}")
-	public List<AccessBookResponse> getAccessBook(@PathVariable("id") int bookId) {
+	public List<AccessBookResponse> getByBook(@PathVariable("id") int bookId) {
 		return bookService.getAccessByBook(bookId);
 	}	
 	
 	@PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.GET, value = "/bypublisher/{id}")
-	public List<AccessBookResponse> getAccessBookByPublisher(@PathVariable("id") int publisherId) {
+	public List<AccessBookResponse> getByPublisher(@PathVariable("id") int publisherId) {
 		return bookService.getAccessByPublisher(publisherId);
 	}
 }
