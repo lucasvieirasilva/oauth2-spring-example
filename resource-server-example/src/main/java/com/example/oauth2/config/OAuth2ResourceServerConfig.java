@@ -40,11 +40,6 @@ public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter 
     }
  
     @Bean
-    public TokenStore tokenStore() {
-        return new JwtTokenStore(accessTokenConverter());
-    }
- 
-    @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
     	JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         Resource resource = new ClassPathResource("public.txt");
@@ -57,7 +52,12 @@ public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter 
         converter.setVerifierKey(publicKey);
         return converter;
     }
- 
+    
+    @Bean
+    public TokenStore tokenStore() {
+        return new JwtTokenStore(accessTokenConverter());
+    }
+    
     @Bean
     @Primary
     public DefaultTokenServices tokenServices() {
