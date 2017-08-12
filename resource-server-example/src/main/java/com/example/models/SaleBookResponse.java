@@ -1,11 +1,11 @@
-package com.example.oauth2.models;
+package com.example.models;
 
 import java.util.Date;
 
-public class AccessBookResponse {
+public class SaleBookResponse {
 	private BookResponse book;
 	private CustomerResponse customer;
-	private Date accessDate;
+	private Date saleDate;
 	
 	public BookResponse getBook() {
 		return book;
@@ -19,10 +19,10 @@ public class AccessBookResponse {
 	public void setCustomer(CustomerResponse customer) {
 		this.customer = customer;
 	}
-	public Date getAccessDate() {
-		return accessDate;
+	public Date getSaleDate() {
+		return saleDate;
 	}
-	public void setAccessDate(Date accessDate) {
-		this.accessDate = accessDate;
+	public void setSaleDate(Date saleDate) {
+		this.saleDate = saleDate;
 	}
 }

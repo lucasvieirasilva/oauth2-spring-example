@@ -1,4 +1,4 @@
-package com.example.oauth2.services;
+package com.example.services;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -6,12 +6,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.oauth2.models.AccessBookResponse;
-import com.example.oauth2.models.BookResponse;
-import com.example.oauth2.models.CustomerResponse;
-import com.example.oauth2.models.FeedbackBookResponse;
-import com.example.oauth2.models.PublisherResponse;
-import com.example.oauth2.models.SaleBookResponse;
+import com.example.models.AccessBookResponse;
+import com.example.models.BookResponse;
+import com.example.models.CustomerResponse;
+import com.example.models.FeedbackBookResponse;
+import com.example.models.PublisherResponse;
+import com.example.models.SaleBookResponse;
 
 @Service
 public class BookService {

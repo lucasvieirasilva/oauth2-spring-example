@@ -1,4 +1,4 @@
-package com.example.oauth2.models;
+package com.example.models;
 
 public class CustomerResponse {
 	private String firstName;

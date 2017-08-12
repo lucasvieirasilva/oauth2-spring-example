@@ -1,4 +1,4 @@
-package com.example.oauth2.controllers;
+package com.example.controllers;
 
 import java.util.List;
 
@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.oauth2.models.SaleBookResponse;
-import com.example.oauth2.services.BookService;
+
+import com.example.models.SaleBookResponse;
+import com.example.services.BookService;
 
 @RestController
 @RequestMapping("/api/book/sales/")
